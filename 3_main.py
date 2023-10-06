@@ -59,7 +59,7 @@ if solve_sudoku(sudoku_board):
     for row in range(9):
         for col in range(9):
             press_num(sudoku_board[row][col])
-        time.sleep(0.5)
+        time.sleep(0.1)
         press_newRow()
 else:
     print("No solution exists.")

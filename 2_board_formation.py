@@ -21,16 +21,17 @@ for i in range(9):
     for j in range(9):
         image_path = f'./cell_{i}{j}.png'
         image = cv2.imread(os.path.join(folder_path, image_path))
-
+        
         # Image preprocess
         gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         _, thresholded_image = cv2.threshold(gray_image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+        
         # Noise removal
         kernel = np.ones((3, 3), np.uint8)
         clean_image = cv2.morphologyEx(thresholded_image, cv2.MORPH_OPEN, kernel, iterations=2)
 
         # Perform OCR
-        custom_config = r'--psm 10'
+        custom_config = r'--psm 6 outputbase digits'
         recognized_digit = pytesseract.image_to_string(clean_image, config=custom_config)
 
         # Post-process
