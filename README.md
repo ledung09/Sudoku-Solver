@@ -1,10 +1,10 @@
 # Sudoku.com Auto-Solver
 
-## Overview:
+## Overview
 
 This project utilizes computer vision and optical character recognition (OCR) technologies to automatically solve Sudoku puzzles from images. The Sudoku Solver employs OpenCV for image processing, pytesseract OCR for digit recognition, and PyAutoGUI for automating the completion of Sudoku puzzles on the sudoku.com website.
 
-## Technologies Used:
+## Technologies Used
 
 1. OpenCV (cv2):
 
